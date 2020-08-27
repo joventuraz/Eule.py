@@ -111,6 +111,20 @@ def cube_conv_sm(speed):
                         send_mouse(handle, 'LM', bw[0], bw[1])  # Backwards
                         macro_sleep(0.1)
                         send_mouse(handle, 'LM', fw[0], fw[1])  # Forwards
+            elif speed == 'extra_slow':
+                for i in range(6):
+                    for j in range(10):
+                        send_mouse(
+                            handle, 'RM', item[0] + j * step[0], item[1] + i * step[1]
+                        )
+                        macro_sleep(0.26)
+                        send_mouse(handle, 'LM', fill[0], fill[1])  # Fill
+                        macro_sleep(0.2)
+                        send_mouse(handle, 'LM', trans[0], trans[1])  # Transmute
+                        macro_sleep(0.26)
+                        send_mouse(handle, 'LM', bw[0], bw[1])  # Backwards
+                        macro_sleep(0.2)
+                        send_mouse(handle, 'LM', fw[0], fw[1])  # Forwards
         except StopMacro:
             pass
 
@@ -176,6 +190,23 @@ def cube_conv_lg(speed):
                         macro_sleep(0.13)
                         send_mouse(handle, 'LM', bw[0], bw[1])  # Backwards
                         macro_sleep(0.1)
+                        send_mouse(handle, 'LM', fw[0], fw[1])  # Forwards
+            elif speed == 'extra_slow':
+                for i in range(3):
+                    for j in range(10):
+                        send_mouse(
+                            handle,
+                            'RM',
+                            item[0] + j * step[0],
+                            item[1] + i * step[1] * 2,
+                        )
+                        macro_sleep(0.26)
+                        send_mouse(handle, 'LM', fill[0], fill[1])  # Fill
+                        macro_sleep(0.2)
+                        send_mouse(handle, 'LM', trans[0], trans[1])  # Transmute
+                        macro_sleep(0.26)
+                        send_mouse(handle, 'LM', bw[0], bw[1])  # Backwards
+                        macro_sleep(0.2)
                         send_mouse(handle, 'LM', fw[0], fw[1])  # Forwards
         except StopMacro:
             pass
