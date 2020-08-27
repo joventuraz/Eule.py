@@ -437,6 +437,12 @@ class HotkeyTab(QWidget):
         radio.setChecked(self.settings.special['cube_conv_speed'] == 'slow')
         radio.clicked.connect(lambda: self.radio_clicked('slow'))
         cube_converter_layout.addWidget(radio, 2, 4, 1, 2)
+        
+        radio = QRadioButton(cube_converter)
+        radio.setText('Extra Slow')
+        radio.setChecked(self.settings.special['cube_conv_speed'] == 'extra_slow')
+        radio.clicked.connect(lambda: self.radio_clicked('extra_slow'))
+        cube_converter_layout.addWidget(radio, 2, 4, 1, 2)
 
         label = QLabel(cube_converter)
         label.setText('Reforge / Convert Set')
@@ -530,7 +536,7 @@ class HotkeyTab(QWidget):
             self.settings.special['armor_swap_amount'] = 3
         elif value == 'bounty_dh':
             self.settings.special['armor_swap_amount'] = 2
-        elif value in ['sol', 'normal', 'slow']:
+        elif value in ['sol', 'normal', 'slow', 'extra_slow']:
             self.settings.special['cube_conv_speed'] = value
 
         if not self.listener.paused:
